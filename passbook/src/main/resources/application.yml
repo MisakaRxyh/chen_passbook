@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: Chen-Passbook
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/passbook?autoReconnect=true
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  kafka:
+    bootstrap-servers: 127.0.0.1:9092
+    consumer:
+      group-id: passbook
+    listener:
+      concurrency: 4
+  data:
+    hbase:
+      quorum: 127.0.0.1:2181
+      rootDir: file:///Users/yezi/passbook_upgrade/data
+      # file:///Users/yezi/passbook_upgrade/data/root_dir
+      nodeParent: /hbase
+  redis:
+    host: 127.0.0.1
+    port: 6379
+
+server:
+  port: 9528
+
+logging:
+  file: chen-passbook.log
+  level: debug
+
+
